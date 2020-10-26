@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.titre }}{% endblock %}
+
+{% block body %}
+
+<style>
+    article > * {
+        margin-bottom: 1.5em;
+    }
+    img {
+        height:250px;
+    }
+</style>
+
+<article>
+    <h2 class="card-title">{{ product.titre }}</h2>
+    <img src="{{ product.image }}" alt="{{ product.titre }}">
+    <p class="card-text">{{ product.description }}</p>
+    <h4>{{ product.prix }}€</h4>
+</article>
+
+{% endblock %}
+

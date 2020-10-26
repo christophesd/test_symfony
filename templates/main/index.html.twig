@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+<section id="products" class="row">
+    {% for product in products %}
+        <div class="col-12 col-sm-6 col-md-4 my-2">
+            <div class="card">
+                <img src="{{ product.image }}" class="card-img-top" alt="{{ product.titre }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.titre }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <a href="{{ path('product', {id: product.id, slug: product.slug}) }}" class="btn btn-primary">{{ product.prix }}€</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
